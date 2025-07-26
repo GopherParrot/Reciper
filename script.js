@@ -96,7 +96,8 @@ function setLoading(isLoading) {
     if (isLoading) {
         inputSection.classList.add('hidden');
         thinkingSection.classList.remove('hidden');
-    } else {
+    }
+    else {
         inputSection.classList.remove('hidden');
         thinkingSection.classList.add('hidden');
     }
@@ -144,7 +145,7 @@ generateRecipeBtn.addEventListener('click', async () => {
             }
         };
 
-        const apiKey = "";
+        const apiKey = "AIzaSyA0DRATrqr9lLwHhUkxF9l_ARUPmr4F-vM";
         const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
 
         const response = await fetch(apiUrl, {
@@ -174,17 +175,22 @@ generateRecipeBtn.addEventListener('click', async () => {
                 viewRecipe(generatedRecipes[0]);
                 showSuccessMessage();
                 ingredientsInput.value = '';
-            } else {
+            }
+            else {
                 displayError("The AI did not generate any valid recipes. Please try again.");
             }
-        } else {
+        }
+
+        else {
             displayError("Could not generate recipes. Please try again or rephrase your ingredients.");
             console.error("Unexpected API response structure:", result);
         }
-    } catch (err) {
+    }
+    catch (err) {
         console.error("Error generating recipe:", err);
         displayError("An error occurred while generating the recipes. Please try again.");
-    } finally {
+    }
+    finally {
         setLoading(false);
     }
 });
@@ -196,7 +202,9 @@ function renderGeneratedRecipes() {
         noRecipesMessage.classList.remove('hidden');
         generatedRecipesContent.appendChild(noRecipesMessage);
         return;
-    } else {
+    }
+
+    else {
         noRecipesMessage.classList.add('hidden');
     }
 
@@ -264,7 +272,9 @@ function viewRecipe(recipe) {
             li.textContent = item;
             modalIngredients.appendChild(li);
         });
-    } else {
+    }
+
+    else {
         modalIngredients.innerHTML = '<li>No ingredients listed.</li>';
     }
 
@@ -275,7 +285,9 @@ function viewRecipe(recipe) {
             li.textContent = step;
             modalInstructions.appendChild(li);
         });
-    } else {
+    }
+
+    else {
         modalInstructions.innerHTML = '<li>No instructions provided.</li>';
     }
 
