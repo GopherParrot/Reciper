@@ -81,17 +81,14 @@ window.onload = () => {
 
     renderGeneratedRecipes();
 };
-
 function displayError(message) {
     errorMessage.textContent = message;
     errorMessage.classList.remove('hidden');
 }
-
 function clearError() {
     errorMessage.textContent = '';
     errorMessage.classList.add('hidden');
 }
-
 function setLoading(isLoading) {
     if (isLoading) {
         inputSection.classList.add('hidden');
