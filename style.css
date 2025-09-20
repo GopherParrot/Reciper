@@ -1,4 +1,4 @@
-body {
+body{
     font-family: 'Zen Kurenaido', sans-serif;
     overflow-x: hidden;
     background-color: #f0f9ff;
@@ -8,8 +8,7 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
-
-body::before {
+body::before{
     content: '';
     position: fixed;
     top: 0;
@@ -20,23 +19,23 @@ body::before {
     z-index: -1;
 }
 
-#main-title {
+#main-title{
     font-family: 'Cookie', cursive;
 }
 
-.fade-slide-up-initial {
+.fade-slide-up-initial{
     opacity: 0;
     transform: translateY(20px);
 }
 
-@keyframes fadeSlideUp {
+@keyframes fadeSlideUp{
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
 
-@keyframes fadeIn {
+@keyframes fadeIn{
     to {
         opacity: 1;
     }
